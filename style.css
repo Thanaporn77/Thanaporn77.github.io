@@ -611,3 +611,27 @@ img.logo + .ico { display: none; }
 .co-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); text-underline-offset: 3px; }
 .co-link:hover { color: var(--accent); }
 .co-link span { color: var(--accent); font-size: .85em; }
+
+/* Floating contact button */
+.fab { position: fixed; left: 20px; bottom: 20px; z-index: 30; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.fab-btn { position: relative; width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--accent), #0d9488); color: #fff; box-shadow: 0 12px 28px -10px rgb(20 83 45 / .7); transition: transform .2s; }
+:root[data-theme="dark"] .fab-btn { color: #0c1210; }
+.fab-btn:hover { transform: scale(1.07); }
+.fab-btn::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); animation: ring 2.6s ease-out infinite; }
+@keyframes ring { 70%, 100% { box-shadow: 0 0 0 14px transparent; } }
+.fab-close { display: none; }
+.fab.open .fab-open { display: none; } .fab.open .fab-close { display: block; }
+.fab.open .fab-btn::after { animation: none; }
+.fab-menu { list-style: none; display: grid; gap: 8px; pointer-events: none; }
+.fab-item { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 7px; border-radius: 999px; background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); box-shadow: var(--shadow); font-weight: 600; font-size: .9rem; white-space: nowrap;
+  opacity: 0; transform: translateY(10px) scale(.95); transition: opacity .2s, transform .2s, border-color .15s; }
+.fab-item:hover { text-decoration: none; border-color: var(--accent); }
+.fab-ic { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, var(--bg)); font-size: 1rem; }
+.fab.open .fab-menu { pointer-events: auto; }
+.fab.open .fab-item { opacity: 1; transform: none; }
+.fab.open li:nth-last-child(1) .fab-item { transition-delay: .02s; } .fab.open li:nth-last-child(2) .fab-item { transition-delay: .06s; }
+.fab.open li:nth-last-child(3) .fab-item { transition-delay: .1s; } .fab.open li:nth-last-child(4) .fab-item { transition-delay: .14s; }
+@media (prefers-reduced-motion: reduce) { .fab-btn::after { animation: none; } .fab-item { transition: none; } }
+@media print { .fab { display: none; } }

@@ -178,3 +178,13 @@ if (startLang === 'th') setLang('th');
     });
   }));
 })();
+
+// ---- Floating contact ----
+(() => {
+  const fab = document.getElementById('fab'), btn = document.getElementById('fabBtn');
+  if (!fab) return;
+  const set = (o) => { fab.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
+  btn.addEventListener('click', (e) => { e.stopPropagation(); set(!fab.classList.contains('open')); });
+  document.addEventListener('click', (e) => { if (!fab.contains(e.target)) set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+})();
