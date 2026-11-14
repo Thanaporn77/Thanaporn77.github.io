@@ -63,7 +63,7 @@ const counter = new IntersectionObserver((entries) => {
     requestAnimationFrame(step);
   });
 }, { threshold: 0.6 });
-document.querySelectorAll('[data-count]').forEach((el) => { if (!reduce) el.textContent = '0'; counter.observe(el); });
+document.querySelectorAll('[data-count]').forEach((el) => counter.observe(el));
 
 // ---- Spotlight that follows the mouse on cards ----
 document.addEventListener('pointermove', (e) => {
