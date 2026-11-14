@@ -253,7 +253,9 @@ main { counter-reset: sec; }
 .tier:first-child .chips li { font-size: 1rem; padding: 10px 16px; }
 
 /* Soft skills */
-.soft-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.soft-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .soft-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .soft-grid { grid-template-columns: 1fr; } }
 .soft { transition: transform .2s, border-color .2s; }
 .soft:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .soft-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft); font-size: 1.4rem; margin-bottom: 14px; }
@@ -284,8 +286,6 @@ main { counter-reset: sec; }
 .slide-kicker { margin: 0 0 6px; font-weight: 600; opacity: .85; }
 .slide-num { margin: 0; font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; }
 .slide-num span:not([data-count]) { font-size: .5em; font-weight: 700; letter-spacing: 0; }
-.slide:nth-child(3) .slide-num { font-size: clamp(1.9rem, 4.2vw, 2.8rem); }
-.slide:nth-child(3) .slide-num span { font-size: 1em; }
 .slide-text { margin: 12px 0 0; opacity: .85; max-width: 460px; font-size: .98rem; }
 .slide-steps { list-style: none; display: grid; gap: 10px; position: relative; padding-left: 22px; }
 .slide-steps::before { content: ""; position: absolute; left: 5px; top: 10px; bottom: 10px; width: 2px; background: rgb(255 255 255 / .3); }
