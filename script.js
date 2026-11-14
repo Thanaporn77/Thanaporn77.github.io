@@ -33,7 +33,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---- Stagger reveal inside grids ----
-document.querySelectorAll('.soft-grid, .pgrid, .duties').forEach((g) => {
+document.querySelectorAll('.pgrid, .duties').forEach((g) => {
   [...g.querySelectorAll(':scope > .reveal')].forEach((el, i) => el.style.setProperty('--d', (i % 6) * 0.07 + 's'));
 });
 
