@@ -33,7 +33,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---- Stagger reveal inside grids ----
-document.querySelectorAll('.soft-grid, .projects-grid, .tiers, .duties, .sites').forEach((g) => {
+document.querySelectorAll('.soft-grid, .pgrid, .duties').forEach((g) => {
   [...g.querySelectorAll(':scope > .reveal')].forEach((el, i) => el.style.setProperty('--d', (i % 6) * 0.07 + 's'));
 });
 
@@ -141,4 +141,20 @@ if (startLang === 'th') setLang('th');
     scrollTo({ top: box.offsetTop + total * (k + 0.5) / slides.length, behavior: reduce ? 'auto' : 'smooth' });
   }));
   update();
+})();
+
+// ---- Skill filter ----
+(() => {
+  const btns = [...document.querySelectorAll('.filter')];
+  const pills = [...document.querySelectorAll('#skillPills li')];
+  btns.forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.filter;
+    btns.forEach((x) => x.classList.toggle('active', x === b));
+    pills.forEach((li, i) => {
+      const show = f === 'all' ? true : li.dataset.cat === f;
+      li.classList.toggle('off', !show);
+      li.classList.remove('pop');
+      if (show && !reduce) { void li.offsetWidth; li.style.animationDelay = (i % 12) * 0.02 + 's'; li.classList.add('pop'); }
+    });
+  }));
 })();
