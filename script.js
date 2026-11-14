@@ -158,3 +158,19 @@ if (startLang === 'th') setLang('th');
     });
   }));
 })();
+
+// ---- More-projects filter ----
+(() => {
+  const btns = [...document.querySelectorAll('[data-mfilter]')];
+  const rows = [...document.querySelectorAll('#moreList li')];
+  btns.forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.mfilter;
+    btns.forEach((x) => x.classList.toggle('active', x === b));
+    rows.forEach((li, i) => {
+      const show = f === 'all' || li.dataset.status === f;
+      li.classList.toggle('off', !show);
+      li.classList.remove('pop');
+      if (show && !reduce) { void li.offsetWidth; li.style.animationDelay = (i % 10) * 0.025 + 's'; li.classList.add('pop'); }
+    });
+  }));
+})();
