@@ -21,6 +21,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="container nav-inner">
@@ -28,7 +29,8 @@
       <nav class="nav-links" aria-label="Main">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
+        <a href="#stack">Stack</a>
+        <a href="#strengths">Strengths</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -42,23 +44,49 @@
   <main id="top">
 
     <!-- ===== HERO ===== -->
-    <section class="hero container">
-      <p class="eyebrow reveal">Hi, I'm</p>
-      <h1 class="reveal">Thanaporn Wicheankarn</h1>
-      <h2 class="hero-role reveal">Senior Developer · Full-stack Web Developer</h2>
-      <p class="hero-lead reveal">
-        I lead the development team at <strong>Yes Web Design Studio</strong> and build
-        web apps, mobile apps and WordPress sites end to end — from back end to server.
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#experience" class="btn btn-primary">See my experience</a>
-        <a href="mailto:thanapornwang0411@gmail.com" class="btn btn-ghost">Email me</a>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="grid-bg"></span></div>
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow reveal"><span class="wave">👋</span> Hi, I'm</p>
+          <h1 class="reveal">Thanaporn Wicheankarn</h1>
+          <h2 class="hero-role reveal">Senior Developer · Full-stack Web Developer</h2>
+          <p class="hero-lead reveal">
+            I lead the development team at <strong>Yes Web Design Studio</strong> and build
+            products with <span class="rotator" id="rotator" aria-live="polite">Laravel</span>
+            — web apps, mobile apps and WordPress sites, from back end to server.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#experience" class="btn btn-primary">See my experience</a>
+            <a href="mailto:thanapornwang0411@gmail.com" class="btn btn-ghost">Email me</a>
+          </div>
+          <ul class="hero-meta reveal">
+            <li><span class="dot"></span> Open to Full-stack / Tech Lead roles</li>
+          </ul>
+        </div>
+
+        <div class="code-card reveal" aria-label="Profile summary as code">
+          <div class="code-top"><span></span><span></span><span></span><em>thanaporn.js</em></div>
+<pre><code><span class="k">const</span> <span class="v">thanaporn</span> = {
+  <span class="p">role</span>: <span class="s">"Senior Developer"</span>,
+  <span class="p">company</span>: <span class="s">"Yes Web Design Studio"</span>,
+  <span class="p">stack</span>: [<span class="s">"Laravel"</span>, <span class="s">"React"</span>, <span class="s">"Node.js"</span>],
+  <span class="p">also</span>: [<span class="s">"Next.js"</span>, <span class="s">"React Native"</span>, <span class="s">"WordPress"</span>],
+  <span class="p">leads</span>: [<span class="s">"timelines"</span>, <span class="s">"tech stack"</span>, <span class="s">"team"</span>],
+  <span class="p">aiAssisted</span>: <span class="b">true</span>,
+  <span class="p">next</span>: <span class="s">"Full-stack → Tech Lead"</span>,
+};<span class="caret"></span></code></pre>
+        </div>
       </div>
-      <ul class="hero-meta reveal">
-        <li><span class="dot"></span> Open to Full-stack / Tech Lead roles</li>
-        <li>Laravel · React · Node.js · WordPress</li>
-      </ul>
     </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-label="Technologies I use">
+      <div class="marquee-track">
+        <ul><li>Laravel</li><li>React</li><li>Node.js</li><li>Next.js</li><li>TypeScript</li><li>React Native</li><li>Inertia.js</li><li>Tailwind CSS</li><li>MySQL</li><li>WordPress</li><li>WPGraphQL</li><li>WooCommerce</li><li>Cloudflare</li><li>AWS Lightsail</li></ul>
+        <ul aria-hidden="true"><li>Laravel</li><li>React</li><li>Node.js</li><li>Next.js</li><li>TypeScript</li><li>React Native</li><li>Inertia.js</li><li>Tailwind CSS</li><li>MySQL</li><li>WordPress</li><li>WPGraphQL</li><li>WooCommerce</li><li>Cloudflare</li><li>AWS Lightsail</li></ul>
+      </div>
+    </div>
 
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section container">
@@ -78,9 +106,9 @@
           </p>
         </div>
         <ul class="stats reveal">
-          <li><strong>1 yr</strong><span>Junior → Senior Developer</span></li>
-          <li><strong>8+</strong><span>live client websites</span></li>
-          <li><strong>3</strong><span>platforms: web, mobile, WordPress</span></li>
+          <li><strong><span data-count="1">1</span> yr</strong><span>Junior → Senior Developer</span></li>
+          <li><strong><span data-count="8">8</span>+</strong><span>live client websites</span></li>
+          <li><strong><span data-count="3">3</span></strong><span>platforms: web, mobile, WordPress</span></li>
         </ul>
       </div>
     </section>
@@ -163,34 +191,52 @@
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section container">
-      <h3 class="section-title reveal">Skills</h3>
-      <div class="skills-grid">
-        <div class="card reveal">
-          <h4>Back end</h4>
-          <ul class="tags"><li>Laravel</li><li>PHP</li><li>Node.js</li><li>MySQL</li><li>REST API</li><li>API integration</li></ul>
+    <!-- ===== STACK ===== -->
+    <section id="stack" class="section container">
+      <h3 class="section-title reveal">Tech Stack</h3>
+      <ul class="legend reveal">
+        <li class="c-be">Back end</li><li class="c-fe">Front end</li><li class="c-mo">Mobile</li><li class="c-wp">WordPress</li><li class="c-ops">Server &amp; DevOps</li><li class="c-tl">Tools</li>
+      </ul>
+      <div class="tiers">
+        <div class="tier card reveal">
+          <div class="tier-head"><h4>Use every day</h4><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <ul class="chips"><li class="c-be">Laravel</li><li class="c-be">PHP</li><li class="c-fe">React</li><li class="c-fe">Inertia.js</li><li class="c-fe">JavaScript</li><li class="c-fe">HTML5</li><li class="c-fe">CSS3</li><li class="c-fe">Tailwind CSS</li><li class="c-be">MySQL</li><li class="c-wp">WordPress</li><li class="c-wp">Elementor</li><li class="c-tl">Git / GitHub</li></ul>
         </div>
-        <div class="card reveal">
-          <h4>Front end</h4>
-          <ul class="tags"><li>React</li><li>Inertia.js</li><li>Next.js</li><li>TypeScript</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li></ul>
+        <div class="tier card reveal">
+          <div class="tier-head"><h4>Comfortable &amp; shipped with</h4><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <ul class="chips"><li class="c-be">Node.js</li><li class="c-be">REST API</li><li class="c-fe">Next.js</li><li class="c-fe">TypeScript</li><li class="c-mo">React Native</li><li class="c-wp">WPGraphQL</li><li class="c-wp">WooCommerce</li><li class="c-wp">ACF / SCF</li><li class="c-wp">Polylang / WPML</li><li class="c-ops">Cloudflare</li><li class="c-ops">AWS Lightsail</li><li class="c-ops">CloudPanel</li><li class="c-ops">Plesk</li><li class="c-ops">cPanel</li><li class="c-ops">CyberPanel</li><li class="c-ops">DNS / SSH</li></ul>
         </div>
-        <div class="card reveal">
-          <h4>Mobile</h4>
-          <ul class="tags"><li>React Native</li></ul>
+        <div class="tier card reveal">
+          <div class="tier-head"><h4>Basic / learning</h4><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <ul class="chips"><li class="c-tl">Python</li></ul>
         </div>
-        <div class="card reveal">
-          <h4>WordPress</h4>
-          <ul class="tags"><li>Custom themes</li><li>Custom plugins</li><li>Elementor widgets</li><li>ACF / SCF</li><li>WooCommerce</li><li>Headless (WPGraphQL)</li><li>Polylang / WPML</li></ul>
-        </div>
-        <div class="card reveal">
-          <h4>Server &amp; DevOps</h4>
-          <ul class="tags"><li>AWS Lightsail</li><li>CloudPanel</li><li>Plesk</li><li>cPanel</li><li>CyberPanel</li><li>Cloudflare</li><li>DNS</li><li>SSH</li><li>Malware clean-up</li></ul>
-        </div>
-        <div class="card reveal">
-          <h4>Tools &amp; workflow</h4>
-          <ul class="tags"><li>Git</li><li>GitHub</li><li>AI-assisted development</li><li>Python (basic)</li></ul>
-        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOFT SKILLS ===== -->
+    <section id="strengths" class="section container">
+      <h3 class="section-title reveal">Soft Skills</h3>
+      <div class="soft-grid">
+        <div class="soft card reveal"><span class="soft-icon">🧭</span><h4>Team leadership</h4><p>Oversee the development team's work and step in to unblock problems across every project.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🗓️</span><h4>Planning &amp; estimation</h4><p>Turn sales scopes into realistic project timelines the team can actually deliver.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">💬</span><h4>Technical consulting</h4><p>Explain trade-offs in plain language and recommend the right stack for each project.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🧯</span><h4>Calm under pressure</h4><p>Restore client sites after downtime, hacking and spam injection — fast and methodically.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🌱</span><h4>Mentoring &amp; hiring</h4><p>Design and run hiring tests for Senior and Junior developers and help new teammates grow.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🚀</span><h4>Fast learner</h4><p>Promoted from Junior to Senior in one year by picking up new stacks as projects needed them.</p></div>
+      </div>
+    </section>
+
+    <!-- ===== AI ===== -->
+    <section id="ai" class="section container">
+      <h3 class="section-title reveal">AI in My Workflow</h3>
+      <div class="ai-wrap card reveal">
+        <p class="ai-lead">I use AI as a teammate to ship faster — while I stay responsible for the architecture, the review and the final call.</p>
+        <ol class="ai-steps">
+          <li><span class="ai-num">01</span><h4>Scope → plan</h4><p>Break down sales scopes into tasks, estimates and technical specs in minutes.</p></li>
+          <li><span class="ai-num">02</span><h4>Build faster</h4><p>Generate boilerplate, components and migrations, then review and refine by hand.</p></li>
+          <li><span class="ai-num">03</span><h4>Debug &amp; research</h4><p>Read errors, logs and unfamiliar plugins to reach the root cause sooner.</p></li>
+          <li><span class="ai-num">04</span><h4>Docs &amp; handover</h4><p>Write READMEs, server notes and client-facing explanations the team can reuse.</p></li>
+        </ol>
       </div>
     </section>
 
