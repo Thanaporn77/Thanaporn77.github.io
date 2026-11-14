@@ -50,21 +50,21 @@ if (document.getElementById('rotator') && !reduce) {
 }
 
 // ---- Count-up numbers ----
+function countUp(el) {
+  if (reduce || el.dataset.done) return;
+  el.dataset.done = '1';
+  const end = +el.dataset.count, t0 = performance.now();
+  const step = (t) => {
+    const p = Math.min((t - t0) / 900, 1);
+    el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
 const counter = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (!e.isIntersecting) return;
-    const el = e.target, end = +el.dataset.count, t0 = performance.now();
-    counter.unobserve(el);
-    if (reduce) return;
-    const step = (t) => {
-      const p = Math.min((t - t0) / 900, 1);
-      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  });
+  entries.forEach((e) => { if (e.isIntersecting) { counter.unobserve(e.target); countUp(e.target); } });
 }, { threshold: 0.6 });
-document.querySelectorAll('[data-count]').forEach((el) => counter.observe(el));
+document.querySelectorAll('[data-count]').forEach((el) => { if (!el.closest('.slide')) counter.observe(el); });
 
 // ---- Spotlight that follows the mouse on cards ----
 document.addEventListener('pointermove', (e) => {
@@ -108,32 +108,37 @@ let startLang = new URLSearchParams(location.search).get('lang');
 if (!startLang) { try { startLang = localStorage.getItem('lang'); } catch (e) {} }
 if (startLang === 'th') setLang('th');
 
-// ---- Stat slider ----
+// ---- Scroll-pinned slides (vertical) ----
 (() => {
-  const track = document.getElementById('slides');
-  if (!track) return;
-  const slides = [...track.children];
+  const box = document.getElementById('scrolly');
+  if (!box) return;
+  const slides = [...document.querySelectorAll('#slides .slide')];
   const dots = [...document.querySelectorAll('#dots button')];
-  let current = 0, timer;
-  const go = (i) => {
-    current = (i + slides.length) % slides.length;
-    track.scrollTo({ left: slides[current].offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
-  };
-  const mark = () => {
-    const i = Math.round(track.scrollLeft / track.clientWidth);
+  const no = document.getElementById('slideNo');
+  let current = -1;
+  const show = (i) => {
+    if (i === current) return;
     current = i;
+    slides.forEach((sl, k) => { sl.classList.toggle('active', k === i); sl.classList.toggle('past', k < i); });
     dots.forEach((d, k) => d.classList.toggle('active', k === i));
+    no.textContent = String(i + 1).padStart(2, '0');
+    slides[i].querySelectorAll('[data-count]').forEach(countUp);
   };
-  track.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
-  dots.forEach((d, k) => d.addEventListener('click', () => { go(k); restart(); }));
-  document.getElementById('prevSlide').addEventListener('click', () => { go(current - 1); restart(); });
-  document.getElementById('nextSlide').addEventListener('click', () => { go(current + 1); restart(); });
-  const start = () => { if (!reduce) timer = setInterval(() => go(current + 1), 5000); };
-  const stop = () => clearInterval(timer);
-  const restart = () => { stop(); start(); };
-  const box = document.getElementById('slider');
-  box.addEventListener('mouseenter', stop);
-  box.addEventListener('mouseleave', start);
-  box.addEventListener('touchstart', stop, { passive: true });
-  mark(); start();
+  const update = () => {
+    const r = box.getBoundingClientRect();
+    const total = box.offsetHeight - innerHeight;
+    const p = total > 0 ? Math.min(Math.max(-r.top / total, 0), 0.9999) : 0;
+    show(Math.floor(p * slides.length));
+  };
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => { update(); ticking = false; });
+  }, { passive: true });
+  addEventListener('resize', update);
+  dots.forEach((d, k) => d.addEventListener('click', () => {
+    const total = box.offsetHeight - innerHeight;
+    scrollTo({ top: box.offsetTop + total * (k + 0.5) / slides.length, behavior: reduce ? 'auto' : 'smooth' });
+  }));
+  update();
 })();

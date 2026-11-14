@@ -113,8 +113,10 @@
 };<span class="caret"></span></code></pre>
         </div>
       </div>
-      <div class="slider reveal" id="slider" aria-roledescription="carousel">
-        <div class="slides" id="slides">
+      <div class="scrolly" id="scrolly">
+        <div class="scrolly-sticky">
+        <p class="scrolly-title" data-th="สรุปภาพรวม">At a glance</p>
+        <div class="scrolly-stage" id="slides">
           <article class="slide" aria-label="1 of 3">
             <div class="slide-main">
               <p class="slide-kicker" data-th="⏱ ประสบการณ์ทำงาน">⏱ Experience</p>
@@ -151,10 +153,8 @@
             </ul>
           </article>
         </div>
-        <div class="slider-nav">
-          <button class="slider-btn" id="prevSlide" aria-label="Previous slide">‹</button>
-          <div class="dots" id="dots"><button aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
-          <button class="slider-btn" id="nextSlide" aria-label="Next slide">›</button>
+        <div class="scrolly-dots" id="dots" aria-hidden="true"><button></button><button></button><button></button></div>
+        <p class="scrolly-hint" aria-hidden="true"><span id="slideNo">01</span> / 03 · <span data-th="เลื่อนลงเพื่อดูต่อ">scroll</span> ↓</p>
         </div>
       </div>
     </section>

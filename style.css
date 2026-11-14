@@ -274,11 +274,12 @@ main { counter-reset: sec; }
 .ai-steps p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
 
 /* Stat slider */
-.slider { margin-top: 36px; position: relative; }
-.slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
-  border-radius: 20px; }
-.slides::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 100%; scroll-snap-align: start; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center;
+.scrolly { position: relative; height: 270vh; margin-top: 8px; }
+.scrolly-sticky { position: sticky; top: 60px; height: calc(100vh - 60px); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.scrolly-stage { display: grid; position: relative; }
+.slide { grid-area: 1 / 1; opacity: 0; transform: translateY(60px) scale(.97); pointer-events: none;
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center;
   padding: 36px 40px; border-radius: 20px; color: #ecfdf3; min-height: 260px;
   background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / .12), transparent 45%), linear-gradient(135deg, #14532d, #166534 55%, #0f766e); }
 .slide:nth-child(2) { background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / .12), transparent 45%), linear-gradient(135deg, #166534, #15803d 55%, #4d7c0f); }
@@ -298,13 +299,24 @@ main { counter-reset: sec; }
 .slide-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; align-content: center; }
 .slide-tags li, .slide-list li { padding: 10px 14px; border-radius: 12px; background: rgb(255 255 255 / .13); border: 1px solid rgb(255 255 255 / .18); font-weight: 600; font-size: .92rem; }
 .slide-list { list-style: none; display: grid; gap: 10px; }
-.slider-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
-.slider-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text);
-  font-size: 1.3rem; line-height: 1; cursor: pointer; transition: border-color .15s, transform .15s; }
-.slider-btn:hover { border-color: var(--accent); transform: scale(1.06); }
-.dots { display: flex; gap: 8px; }
-.dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 999px; background: var(--border); cursor: pointer; transition: width .3s, background-color .3s; }
-.dots button.active { width: 28px; background: var(--accent); }
+.slide.active { opacity: 1; transform: none; pointer-events: auto; }
+.slide.past { transform: translateY(-60px) scale(.97); }
+.scrolly-dots { position: absolute; right: -28px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+.scrolly-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: var(--border); cursor: pointer; transition: height .3s, background-color .3s; }
+.scrolly-dots button.active { height: 26px; background: var(--accent); }
+.scrolly-title { margin: 0; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.01em; }
+.scrolly-hint { margin: 0; text-align: center; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.scrolly-hint span:first-child { color: var(--accent); font-weight: 700; }
+@media (max-width: 1140px) { .scrolly-dots { right: 8px; } }
+@media (max-width: 760px) { .scrolly-dots { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .scrolly { height: auto; }
+  .scrolly-sticky { position: static; height: auto; }
+  .scrolly-stage { gap: 16px; }
+  .slide { grid-area: auto; opacity: 1; transform: none; pointer-events: auto; }
+  .scrolly-dots, .scrolly-title { margin: 0; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.01em; }
+.scrolly-hint { display: none; }
+}
 
 /* Experience (job card) */
 .job { padding: 28px; }
@@ -404,10 +416,12 @@ main { counter-reset: sec; }
 
 /* ========== Print (สั่งพิมพ์เป็น resume ได้) ========== */
 @media print {
-  .slider-nav, .nav, .progress, .hero-bg, .code-card, .photo, .avatar, .marquee, .hero-cta, .project-thumb, .duty-icon, .project-links, .socials, .footer { display: none !important; }
+  .scrolly-dots, .scrolly-hint, .nav, .progress, .hero-bg, .code-card, .photo, .avatar, .marquee, .hero-cta, .project-thumb, .duty-icon, .project-links, .socials, .footer { display: none !important; }
   body { font-size: 11pt; color: #000; background: #fff; }
   .section, .hero { padding: 14px 0; }
   .card { border: none; padding: 0; background: none; }
   .js .reveal { opacity: 1; transform: none; }
   a { color: #000; }
 }
+
+@media print { .scrolly { height: auto; } .scrolly-sticky { position: static; height: auto; } .slide { grid-area: auto; opacity: 1; transform: none; margin-bottom: 12px; } }
