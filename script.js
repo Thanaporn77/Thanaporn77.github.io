@@ -107,3 +107,33 @@ document.getElementById('langToggle').addEventListener('click', () => {
 let startLang = new URLSearchParams(location.search).get('lang');
 if (!startLang) { try { startLang = localStorage.getItem('lang'); } catch (e) {} }
 if (startLang === 'th') setLang('th');
+
+// ---- Stat slider ----
+(() => {
+  const track = document.getElementById('slides');
+  if (!track) return;
+  const slides = [...track.children];
+  const dots = [...document.querySelectorAll('#dots button')];
+  let current = 0, timer;
+  const go = (i) => {
+    current = (i + slides.length) % slides.length;
+    track.scrollTo({ left: slides[current].offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+  };
+  const mark = () => {
+    const i = Math.round(track.scrollLeft / track.clientWidth);
+    current = i;
+    dots.forEach((d, k) => d.classList.toggle('active', k === i));
+  };
+  track.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
+  dots.forEach((d, k) => d.addEventListener('click', () => { go(k); restart(); }));
+  document.getElementById('prevSlide').addEventListener('click', () => { go(current - 1); restart(); });
+  document.getElementById('nextSlide').addEventListener('click', () => { go(current + 1); restart(); });
+  const start = () => { if (!reduce) timer = setInterval(() => go(current + 1), 5000); };
+  const stop = () => clearInterval(timer);
+  const restart = () => { stop(); start(); };
+  const box = document.getElementById('slider');
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', start);
+  box.addEventListener('touchstart', stop, { passive: true });
+  mark(); start();
+})();

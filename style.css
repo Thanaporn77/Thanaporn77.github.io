@@ -271,6 +271,41 @@ main { counter-reset: sec; }
 .ai-steps h4 { margin: 6px 0; font-size: 1rem; }
 .ai-steps p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
 
+/* Stat slider */
+.slider { margin-top: 36px; position: relative; }
+.slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  border-radius: 20px; }
+.slides::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; scroll-snap-align: start; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center;
+  padding: 36px 40px; border-radius: 20px; color: #ecfdf3; min-height: 260px;
+  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / .12), transparent 45%), linear-gradient(135deg, #14532d, #166534 55%, #0f766e); }
+.slide:nth-child(2) { background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / .12), transparent 45%), linear-gradient(135deg, #166534, #15803d 55%, #4d7c0f); }
+.slide:nth-child(3) { background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / .12), transparent 45%), linear-gradient(135deg, #0f766e, #115e59 55%, #14532d); }
+.slide-kicker { margin: 0 0 6px; font-weight: 600; opacity: .85; }
+.slide-num { margin: 0; font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; }
+.slide-num span:not([data-count]) { font-size: .5em; font-weight: 700; letter-spacing: 0; }
+.slide:nth-child(3) .slide-num { font-size: clamp(1.9rem, 4.2vw, 2.8rem); }
+.slide:nth-child(3) .slide-num span { font-size: 1em; }
+.slide-text { margin: 12px 0 0; opacity: .85; max-width: 460px; font-size: .98rem; }
+.slide-steps { list-style: none; display: grid; gap: 10px; position: relative; padding-left: 22px; }
+.slide-steps::before { content: ""; position: absolute; left: 5px; top: 10px; bottom: 10px; width: 2px; background: rgb(255 255 255 / .3); }
+.slide-steps li { position: relative; display: flex; flex-direction: column; padding: 10px 14px; border-radius: 12px; background: rgb(255 255 255 / .1); }
+.slide-steps li::before { content: ""; position: absolute; left: -22px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: #bbf7d0; }
+.slide-steps li.now { background: rgb(255 255 255 / .2); }
+.slide-steps li.now::before { box-shadow: 0 0 0 5px rgb(187 247 208 / .3); }
+.slide-steps b { font-size: .8rem; opacity: .8; font-weight: 600; }
+.slide-steps span { font-weight: 700; }
+.slide-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; align-content: center; }
+.slide-tags li, .slide-list li { padding: 10px 14px; border-radius: 12px; background: rgb(255 255 255 / .13); border: 1px solid rgb(255 255 255 / .18); font-weight: 600; font-size: .92rem; }
+.slide-list { list-style: none; display: grid; gap: 10px; }
+.slider-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
+.slider-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text);
+  font-size: 1.3rem; line-height: 1; cursor: pointer; transition: border-color .15s, transform .15s; }
+.slider-btn:hover { border-color: var(--accent); transform: scale(1.06); }
+.dots { display: flex; gap: 8px; }
+.dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 999px; background: var(--border); cursor: pointer; transition: width .3s, background-color .3s; }
+.dots button.active { width: 28px; background: var(--accent); }
+
 /* Experience (job card) */
 .job { padding: 28px; }
 .job-head h4 { font-size: 1.3rem; margin-bottom: 2px; }
@@ -360,6 +395,7 @@ main { counter-reset: sec; }
   .stats li { flex-direction: column; gap: 2px; padding: 14px; }
   .stats strong { font-size: 1.3rem; min-width: 0; }
   .ai-steps { grid-template-columns: 1fr; }
+  .slide { grid-template-columns: 1fr; padding: 26px 22px; gap: 20px; }
   .ai-wrap { padding: 20px; }
   .code-card pre { font-size: .76rem; }
   .job { padding: 20px; }
@@ -368,7 +404,7 @@ main { counter-reset: sec; }
 
 /* ========== Print (สั่งพิมพ์เป็น resume ได้) ========== */
 @media print {
-  .nav, .progress, .hero-bg, .code-card, .photo, .avatar, .marquee, .hero-cta, .project-thumb, .duty-icon, .project-links, .socials, .footer { display: none !important; }
+  .slider-nav, .nav, .progress, .hero-bg, .code-card, .photo, .avatar, .marquee, .hero-cta, .project-thumb, .duty-icon, .project-links, .socials, .footer { display: none !important; }
   body { font-size: 11pt; color: #000; background: #fff; }
   .section, .hero { padding: 14px 0; }
   .card { border: none; padding: 0; background: none; }
