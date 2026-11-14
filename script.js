@@ -96,6 +96,10 @@ function setLang(lang) {
     if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
     el.innerHTML = lang === 'th' ? el.dataset.th : el.dataset.en;
   });
+  document.querySelectorAll('[data-href-th]').forEach((a) => {
+    if (!a.dataset.hrefEn) a.dataset.hrefEn = a.getAttribute('href');
+    a.setAttribute('href', lang === 'th' ? a.dataset.hrefTh : a.dataset.hrefEn);
+  });
   root.lang = lang;
   root.dataset.lang = lang;
   document.title = titles[lang];
