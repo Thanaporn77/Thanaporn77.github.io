@@ -531,3 +531,7 @@ main { counter-reset: sec; }
 }
 
 @media print { .scrolly { height: auto; } .scrolly-sticky { position: static; height: auto; } .slide { grid-area: auto; opacity: 1; transform: none; margin-bottom: 12px; } }
+
+.co-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); text-underline-offset: 3px; }
+.co-link:hover { color: var(--accent); }
+.co-link span { color: var(--accent); font-size: .85em; }
