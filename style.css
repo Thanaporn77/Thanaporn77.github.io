@@ -268,9 +268,9 @@ main { counter-reset: sec; }
 @keyframes pop { from { opacity: 0; transform: scale(.85) translateY(6px); } }
 .ico { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 4px; border-radius: 6px; background: var(--c); color: var(--f);
   font: 800 .6rem var(--font); font-style: normal; letter-spacing: -.02em; }
-.logo { width: 22px; height: 22px; padding: 3px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); flex: none; }
-.logo + .ico { display: none; }
-.picons .logo { width: 26px; height: 26px; padding: 5px; border-radius: 50%; }
+img.logo { width: 22px; height: 22px; padding: 3px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); flex: none; }
+img.logo + .ico { display: none; }
+.picons img.logo { width: 26px; height: 26px; padding: 5px; border-radius: 50%; }
 .picons li { display: grid; place-items: center; }
 .ico-emoji { background: var(--accent-soft); font-size: .8rem; }
 
