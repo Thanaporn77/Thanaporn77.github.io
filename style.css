@@ -635,3 +635,6 @@ img.logo + .ico { display: none; }
 .fab.open li:nth-last-child(3) .fab-item { transition-delay: .1s; } .fab.open li:nth-last-child(4) .fab-item { transition-delay: .14s; }
 @media (prefers-reduced-motion: reduce) { .fab-btn::after { animation: none; } .fab-item { transition: none; } }
 @media print { .fab { display: none; } }
+
+.fab-ic.line-ic { background: #06C755; color: #fff; font: 800 .56rem var(--font); letter-spacing: .02em; }
+.fab.open li:nth-last-child(5) .fab-item { transition-delay: .18s; }
