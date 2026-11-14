@@ -38,11 +38,12 @@ document.querySelectorAll('.soft-grid, .projects-grid, .tiers, .duties, .sites')
 });
 
 // ---- Rotating word in hero ----
-const rot = document.getElementById('rotator');
-if (rot && !reduce) {
+if (document.getElementById('rotator') && !reduce) {
   const words = ['Laravel', 'React', 'Node.js', 'Next.js', 'React Native', 'WordPress'];
   let i = 0;
   setInterval(() => {
+    const rot = document.getElementById('rotator');
+    if (!rot) return;
     rot.classList.add('out');
     setTimeout(() => { i = (i + 1) % words.length; rot.textContent = words[i]; rot.classList.remove('out'); }, 300);
   }, 2200);
@@ -86,3 +87,23 @@ addEventListener('scroll', () => {
     ticking = false;
   });
 }, { passive: true });
+
+// ---- Language switch (EN / TH) ----
+const i18nEls = [...document.querySelectorAll('[data-th]')];
+const titles = { en: document.title, th: document.title };
+function setLang(lang) {
+  i18nEls.forEach((el) => {
+    if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+    el.innerHTML = lang === 'th' ? el.dataset.th : el.dataset.en;
+  });
+  root.lang = lang;
+  root.dataset.lang = lang;
+  document.title = titles[lang];
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+document.getElementById('langToggle').addEventListener('click', () => {
+  setLang(root.dataset.lang === 'th' ? 'en' : 'th');
+});
+let startLang = new URLSearchParams(location.search).get('lang');
+if (!startLang) { try { startLang = localStorage.getItem('lang'); } catch (e) {} }
+if (startLang === 'th') setLang('th');

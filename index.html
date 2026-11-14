@@ -27,13 +27,14 @@
     <div class="container nav-inner">
       <a href="#top" class="logo">Thanaporn<span>.</span></a>
       <nav class="nav-links" aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#stack">Stack</a>
-        <a href="#strengths">Strengths</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-th="เกี่ยวกับ">About</a>
+        <a href="#experience" data-th="ประสบการณ์">Experience</a>
+        <a href="#stack" data-th="Stack">Stack</a>
+        <a href="#strengths" data-th="จุดแข็ง">Strengths</a>
+        <a href="#projects" data-th="ผลงาน">Projects</a>
+        <a href="#contact" data-th="ติดต่อ">Contact</a>
       </nav>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language / เปลี่ยนภาษา"><span class="on-en">TH</span><span class="on-th">EN</span></button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -48,27 +49,27 @@
       <div class="hero-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="grid-bg"></span></div>
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow reveal"><span class="wave">👋</span> Hi, I'm</p>
+          <p class="eyebrow reveal" data-th="&lt;span class=&quot;wave&quot;&gt;👋&lt;/span&gt; สวัสดีค่ะ ฉันชื่อ"><span class="wave">👋</span> Hi, I'm</p>
           <h1 class="reveal">Thanaporn Wicheankarn</h1>
           <h2 class="hero-role reveal">Senior Developer · Full-stack Web Developer</h2>
-          <p class="hero-lead reveal">
+          <p class="hero-lead reveal" data-th="ดูแลทีมพัฒนาที่ &lt;strong&gt;Yes Web Design Studio&lt;/strong&gt; และสร้างงานด้วย &lt;span class=&quot;rotator&quot; id=&quot;rotator&quot; aria-live=&quot;polite&quot;&gt;Laravel&lt;/span&gt; — ทั้งเว็บแอป แอปมือถือ และเว็บ WordPress ตั้งแต่หลังบ้านจนถึงเซิร์ฟเวอร์">
             I lead the development team at <strong>Yes Web Design Studio</strong> and build
             products with <span class="rotator" id="rotator" aria-live="polite">Laravel</span>
             — web apps, mobile apps and WordPress sites, from back end to server.
           </p>
           <div class="hero-cta reveal">
-            <a href="#experience" class="btn btn-primary">See my experience</a>
-            <a href="mailto:thanapornwang0411@gmail.com" class="btn btn-ghost">Email me</a>
+            <a href="#experience" class="btn btn-primary" data-th="ดูประสบการณ์">See my experience</a>
+            <a href="mailto:thanapornwang0411@gmail.com" class="btn btn-ghost" data-th="ส่งอีเมล">Email me</a>
           </div>
           <ul class="hero-meta reveal">
-            <li><span class="dot"></span> Open to Full-stack / Tech Lead roles</li>
+            <li data-th="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt; เปิดรับตำแหน่ง Full-stack / Tech Lead"><span class="dot"></span> Open to Full-stack / Tech Lead roles</li>
           </ul>
         </div>
 
         <figure class="photo reveal">
           <img src="assets/profile.webp" width="640" height="800" alt="Portrait of Thanaporn Wicheankarn" fetchpriority="high">
           <figcaption class="float-chip chip-a"><span>⚡</span> Laravel · React · Node.js</figcaption>
-          <span class="float-chip chip-b"><span>🧭</span> Leads the dev team</span>
+          <span class="float-chip chip-b" data-th="&lt;span&gt;🧭&lt;/span&gt; หัวหน้าทีมพัฒนา"><span>🧭</span> Leads the dev team</span>
         </figure>
       </div>
     </section>
@@ -83,15 +84,15 @@
 
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section container">
-      <h3 class="section-title reveal">About</h3>
+      <h3 class="section-title reveal" data-th="เกี่ยวกับ">About</h3>
       <div class="about-grid">
         <div class="reveal">
-          <p>
+          <p data-th="ได้รับการเลื่อนตำแหน่งจาก Junior เป็น Senior Developer ภายในหนึ่งปี ปัจจุบันดูแลงานของทีมพัฒนา วาง timeline ของโปรเจค แนะนำ tech stack สำหรับโปรเจคใหม่ และเป็นคนที่ทีมมาปรึกษาเมื่อเจอปัญหาทางเทคนิค">
             Promoted from Junior to Senior Developer after one year, I now oversee the
             development team's work, set project timelines, recommend the technical stack
             for new projects and am the go-to person when something technical gets stuck.
           </p>
-          <p>
+          <p data-th="ทำงานหลักด้วย Laravel, React และ Node.js มีผลงานทั้งระบบบริหารจัดการภายใน แอป React Native พร้อม admin dashboard, SaaS ด้าน cookie consent และเว็บไซต์ลูกค้าที่ออนไลน์อยู่กว่า 8 เว็บ นอกจากนี้ยังออกแบบข้อสอบคัดเลือก developer และดูแลเซิร์ฟเวอร์ DNS รวมถึงกู้เว็บที่โดนแฮ็กหรือโดนสแปม">
             I work mainly with Laravel, React and Node.js, and have shipped internal
             management systems, a React Native app with an admin dashboard, a cookie-consent
             SaaS and 8+ live client websites. I also run developer hiring tests and handle
@@ -106,90 +107,91 @@
   <span class="p">stack</span>: [<span class="s">"Laravel"</span>, <span class="s">"React"</span>, <span class="s">"Node.js"</span>],
   <span class="p">also</span>: [<span class="s">"Next.js"</span>, <span class="s">"React Native"</span>, <span class="s">"WordPress"</span>],
   <span class="p">leads</span>: [<span class="s">"timelines"</span>, <span class="s">"tech stack"</span>, <span class="s">"team"</span>],
+  <span class="p">languages</span>: [<span class="s">"Thai"</span>, <span class="s">"English"</span>],
   <span class="p">aiAssisted</span>: <span class="b">true</span>,
   <span class="p">next</span>: <span class="s">"Full-stack → Tech Lead"</span>,
 };<span class="caret"></span></code></pre>
         </div>
       </div>
       <ul class="stats stats-row reveal">
-          <li><strong><span data-count="1">1</span> yr</strong><span>Junior → Senior Developer</span></li>
-          <li><strong><span data-count="8">8</span>+</strong><span>live client websites</span></li>
-          <li><strong><span data-count="3">3</span></strong><span>platforms: web, mobile, WordPress</span></li>
+          <li><strong><span data-count="1">1</span> yr</strong><span data-th="จาก Junior สู่ Senior Developer">Junior → Senior Developer</span></li>
+          <li><strong><span data-count="8">8</span>+</strong><span data-th="เว็บไซต์ลูกค้าที่ออนไลน์อยู่">live client websites</span></li>
+          <li><strong><span data-count="3">3</span></strong><span data-th="แพลตฟอร์ม: เว็บ, มือถือ, WordPress">platforms: web, mobile, WordPress</span></li>
         </ul>
     </section>
 
     <!-- ===== EXPERIENCE ===== -->
     <section id="experience" class="section container">
-      <h3 class="section-title reveal">Experience</h3>
+      <h3 class="section-title reveal" data-th="ประสบการณ์">Experience</h3>
 
       <div class="job card reveal">
         <div class="job-head">
           <div>
             <h4>Yes Web Design Studio</h4>
-            <p class="muted">Web design &amp; development agency</p>
+            <p class="muted" data-th="บริษัทออกแบบและพัฒนาเว็บไซต์">Web design &amp; development agency</p>
           </div>
         </div>
 
         <ol class="career">
           <li class="current">
             <span class="career-role">Senior Developer</span>
-            <span class="career-date">Aug 2026 — Present</span>
+            <span class="career-date" data-th="ส.ค. 2026 — ปัจจุบัน">Aug 2026 — Present</span>
           </li>
           <li>
             <span class="career-role">Junior Developer</span>
-            <span class="career-date">Aug 2025 — Jul 2026</span>
+            <span class="career-date" data-th="ส.ค. 2025 — ก.ค. 2026">Aug 2025 — Jul 2026</span>
           </li>
         </ol>
 
-        <p class="job-lead">What I do</p>
+        <p class="job-lead" data-th="สิ่งที่ทำ">What I do</p>
         <div class="duties">
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🧭</span>
             <div>
-              <h5>Team lead &amp; planning</h5>
-              <p>Lead the development team and solve the problems it runs into. Set timelines and choose the stack for new projects from sales scopes.</p>
+              <h5 data-th="ดูแลทีมและวางแผน">Team lead &amp; planning</h5>
+              <p data-th="ดูแลทีมพัฒนาและช่วยแก้ปัญหาที่ทีมเจอ วาง timeline และเลือก stack ให้โปรเจคใหม่จาก scope ที่ทีมเซลส่งมา">Lead the development team and solve the problems it runs into. Set timelines and choose the stack for new projects from sales scopes.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🧩</span>
             <div>
-              <h5>Web applications</h5>
-              <p>Build Laravel + React (Inertia.js) apps, such as an internal sales system with contracts, monthly reports and per-salesperson figures.</p>
+              <h5 data-th="เว็บแอปพลิเคชัน">Web applications</h5>
+              <p data-th="พัฒนาแอปด้วย Laravel + React (Inertia.js) เช่น ระบบจัดการงานขายภายใน มีสัญญา รายงานรายเดือน และยอดขายแยกรายเซลส์">Build Laravel + React (Inertia.js) apps, such as an internal sales system with contracts, monthly reports and per-salesperson figures.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">📱</span>
             <div>
-              <h5>Mobile app</h5>
-              <p>Co-developed a React Native app with a Laravel admin dashboard: hotel booking, dining, events, car service and loyalty points.</p>
+              <h5 data-th="แอปมือถือ">Mobile app</h5>
+              <p data-th="ร่วมพัฒนาแอป React Native พร้อม admin dashboard ด้วย Laravel: จองห้องพัก ร้านอาหาร อีเวนต์ บริการรถ และระบบสะสมแต้ม">Co-developed a React Native app with a Laravel admin dashboard: hotel booking, dining, events, car service and loyalty points.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🔗</span>
             <div>
-              <h5>Headless architecture</h5>
-              <p>Propose and build Next.js + TypeScript front ends on WordPress + WPGraphQL, and multi-site front ends connected to a CMS via API.</p>
+              <h5 data-th="สถาปัตยกรรม Headless">Headless architecture</h5>
+              <p data-th="เสนอและพัฒนา front end ด้วย Next.js + TypeScript ที่ใช้ WordPress + WPGraphQL เป็น CMS และ front end หลายเว็บที่เชื่อมกับ CMS ผ่าน API">Propose and build Next.js + TypeScript front ends on WordPress + WPGraphQL, and multi-site front ends connected to a CMS via API.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🛠️</span>
             <div>
               <h5>WordPress</h5>
-              <p>Custom themes, plugins and Elementor widgets; company-profile and WooCommerce sites, including a marketplace-style back office.</p>
+              <p data-th="พัฒนา theme, plugin และ Elementor widget เอง ทำเว็บ company profile และ WooCommerce รวมถึงระบบหลังบ้านแบบ marketplace">Custom themes, plugins and Elementor widgets; company-profile and WooCommerce sites, including a marketplace-style back office.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🖥️</span>
             <div>
-              <h5>Servers &amp; recovery</h5>
-              <p>Set up and maintain servers, domains, DNS and Cloudflare; restore sites after downtime, hacking and spam injection.</p>
+              <h5 data-th="เซิร์ฟเวอร์และกู้คืนเว็บ">Servers &amp; recovery</h5>
+              <p data-th="ติดตั้งและดูแลเซิร์ฟเวอร์ โดเมน DNS และ Cloudflare กู้เว็บที่ล่ม โดนแฮ็ก หรือโดนฝังสแปม">Set up and maintain servers, domains, DNS and Cloudflare; restore sites after downtime, hacking and spam injection.</p>
             </div>
           </div>
           <div class="duty">
             <span class="duty-icon" aria-hidden="true">🧑‍💻</span>
             <div>
-              <h5>Hiring</h5>
-              <p>Design and run developer hiring tests for Senior and Junior candidates, including a WordPress custom-widget practical test.</p>
+              <h5 data-th="คัดเลือกบุคลากร">Hiring</h5>
+              <p data-th="ออกแบบและคุมข้อสอบคัดเลือก developer ระดับ Senior และ Junior รวมถึงข้อสอบปฏิบัติสร้าง WordPress custom widget">Design and run developer hiring tests for Senior and Junior candidates, including a WordPress custom-widget practical test.</p>
             </div>
           </div>
         </div>
@@ -198,21 +200,21 @@
 
     <!-- ===== STACK ===== -->
     <section id="stack" class="section container">
-      <h3 class="section-title reveal">Tech Stack</h3>
+      <h3 class="section-title reveal" data-th="Tech Stack">Tech Stack</h3>
       <ul class="legend reveal">
-        <li class="c-be">Back end</li><li class="c-fe">Front end</li><li class="c-mo">Mobile</li><li class="c-wp">WordPress</li><li class="c-ops">Server &amp; DevOps</li><li class="c-tl">Tools</li>
+        <li class="c-be" data-th="Back end">Back end</li><li class="c-fe" data-th="Front end">Front end</li><li class="c-mo" data-th="Mobile">Mobile</li><li class="c-wp">WordPress</li><li class="c-ops">Server &amp; DevOps</li><li class="c-tl" data-th="เครื่องมือ">Tools</li>
       </ul>
       <div class="tiers">
         <div class="tier card reveal">
-          <div class="tier-head"><h4>Use every day</h4><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="tier-head"><h4 data-th="ใช้ทุกวัน">Use every day</h4><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i></span></div>
           <ul class="chips"><li class="c-be">Laravel</li><li class="c-be">PHP</li><li class="c-fe">React</li><li class="c-fe">Inertia.js</li><li class="c-fe">JavaScript</li><li class="c-fe">HTML5</li><li class="c-fe">CSS3</li><li class="c-fe">Tailwind CSS</li><li class="c-be">MySQL</li><li class="c-wp">WordPress</li><li class="c-wp">Elementor</li><li class="c-tl">Git / GitHub</li></ul>
         </div>
         <div class="tier card reveal">
-          <div class="tier-head"><h4>Comfortable &amp; shipped with</h4><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="tier-head"><h4 data-th="ใช้คล่องและเคยส่งงานจริง">Comfortable &amp; shipped with</h4><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i></span></div>
           <ul class="chips"><li class="c-be">Node.js</li><li class="c-be">REST API</li><li class="c-fe">Next.js</li><li class="c-fe">TypeScript</li><li class="c-mo">React Native</li><li class="c-wp">WPGraphQL</li><li class="c-wp">WooCommerce</li><li class="c-wp">ACF / SCF</li><li class="c-wp">Polylang / WPML</li><li class="c-ops">Cloudflare</li><li class="c-ops">AWS Lightsail</li><li class="c-ops">CloudPanel</li><li class="c-ops">Plesk</li><li class="c-ops">cPanel</li><li class="c-ops">CyberPanel</li><li class="c-ops">DNS / SSH</li></ul>
         </div>
         <div class="tier card reveal">
-          <div class="tier-head"><h4>Basic / learning</h4><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="tier-head"><h4 data-th="พื้นฐาน / กำลังเรียนรู้">Basic / learning</h4><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i></span></div>
           <ul class="chips"><li class="c-tl">Python</li></ul>
         </div>
       </div>
@@ -220,55 +222,55 @@
 
     <!-- ===== SOFT SKILLS ===== -->
     <section id="strengths" class="section container">
-      <h3 class="section-title reveal">Soft Skills</h3>
+      <h3 class="section-title reveal" data-th="Soft Skills">Soft Skills</h3>
       <div class="soft-grid">
-        <div class="soft card reveal"><span class="soft-icon">🧭</span><h4>Team leadership</h4><p>Oversee the development team's work and step in to unblock problems across every project.</p></div>
-        <div class="soft card reveal"><span class="soft-icon">🗓️</span><h4>Planning &amp; estimation</h4><p>Turn sales scopes into realistic project timelines the team can actually deliver.</p></div>
-        <div class="soft card reveal"><span class="soft-icon">💬</span><h4>Technical consulting</h4><p>Explain trade-offs in plain language and recommend the right stack for each project.</p></div>
-        <div class="soft card reveal"><span class="soft-icon">🧯</span><h4>Calm under pressure</h4><p>Restore client sites after downtime, hacking and spam injection — fast and methodically.</p></div>
-        <div class="soft card reveal"><span class="soft-icon">🌱</span><h4>Mentoring &amp; hiring</h4><p>Design and run hiring tests for Senior and Junior developers and help new teammates grow.</p></div>
-        <div class="soft card reveal"><span class="soft-icon">🚀</span><h4>Fast learner</h4><p>Promoted from Junior to Senior in one year by picking up new stacks as projects needed them.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🧭</span><h4 data-th="ภาวะผู้นำทีม">Team leadership</h4><p data-th="ดูแลงานของทีมพัฒนา และเข้าไปช่วยแก้ปัญหาที่ติดขัดในทุกโปรเจค">Oversee the development team's work and step in to unblock problems across every project.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🗓️</span><h4 data-th="วางแผนและประเมินงาน">Planning &amp; estimation</h4><p data-th="แปลง scope จากทีมเซลส์ให้เป็น timeline ที่ทีมทำได้จริง">Turn sales scopes into realistic project timelines the team can actually deliver.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">💬</span><h4 data-th="ให้คำปรึกษาด้านเทคนิค">Technical consulting</h4><p data-th="อธิบายข้อดีข้อเสียด้วยภาษาที่เข้าใจง่าย และแนะนำ stack ที่เหมาะกับแต่ละโปรเจค">Explain trade-offs in plain language and recommend the right stack for each project.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🧯</span><h4 data-th="ใจเย็นภายใต้แรงกดดัน">Calm under pressure</h4><p data-th="กู้เว็บลูกค้าที่ล่ม โดนแฮ็ก หรือโดนฝังสแปม ได้อย่างรวดเร็วและเป็นระบบ">Restore client sites after downtime, hacking and spam injection — fast and methodically.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🌱</span><h4 data-th="สอนงานและคัดเลือกคน">Mentoring &amp; hiring</h4><p data-th="ออกแบบข้อสอบคัดเลือก developer ระดับ Senior และ Junior และช่วยให้เพื่อนร่วมทีมใหม่เติบโต">Design and run hiring tests for Senior and Junior developers and help new teammates grow.</p></div>
+        <div class="soft card reveal"><span class="soft-icon">🚀</span><h4 data-th="เรียนรู้เร็ว">Fast learner</h4><p data-th="เลื่อนจาก Junior เป็น Senior ภายในหนึ่งปี ด้วยการเรียนรู้ stack ใหม่ตามที่โปรเจคต้องการ">Promoted from Junior to Senior in one year by picking up new stacks as projects needed them.</p></div>
       </div>
     </section>
 
     <!-- ===== AI ===== -->
     <section id="ai" class="section container">
-      <h3 class="section-title reveal">AI in My Workflow</h3>
+      <h3 class="section-title reveal" data-th="การใช้ AI ในการทำงาน">AI in My Workflow</h3>
       <div class="ai-wrap card reveal">
-        <p class="ai-lead">I use AI as a teammate to ship faster — while I stay responsible for the architecture, the review and the final call.</p>
+        <p class="ai-lead" data-th="ใช้ AI เป็นผู้ช่วยให้ส่งงานได้เร็วขึ้น โดยที่ยังรับผิดชอบเรื่องสถาปัตยกรรม การรีวิว และการตัดสินใจสุดท้ายเอง">I use AI as a teammate to ship faster — while I stay responsible for the architecture, the review and the final call.</p>
         <ol class="ai-steps">
-          <li><span class="ai-num">01</span><h4>Scope → plan</h4><p>Break down sales scopes into tasks, estimates and technical specs in minutes.</p></li>
-          <li><span class="ai-num">02</span><h4>Build faster</h4><p>Generate boilerplate, components and migrations, then review and refine by hand.</p></li>
-          <li><span class="ai-num">03</span><h4>Debug &amp; research</h4><p>Read errors, logs and unfamiliar plugins to reach the root cause sooner.</p></li>
-          <li><span class="ai-num">04</span><h4>Docs &amp; handover</h4><p>Write READMEs, server notes and client-facing explanations the team can reuse.</p></li>
+          <li><span class="ai-num">01</span><h4 data-th="Scope → แผนงาน">Scope → plan</h4><p data-th="แตก scope จากทีมเซลส์เป็น task ประเมินเวลา และ technical spec ได้ในไม่กี่นาที">Break down sales scopes into tasks, estimates and technical specs in minutes.</p></li>
+          <li><span class="ai-num">02</span><h4 data-th="พัฒนาเร็วขึ้น">Build faster</h4><p data-th="สร้าง boilerplate, component และ migration แล้วรีวิวและปรับแก้เอง">Generate boilerplate, components and migrations, then review and refine by hand.</p></li>
+          <li><span class="ai-num">03</span><h4 data-th="Debug และค้นคว้า">Debug &amp; research</h4><p data-th="อ่าน error, log และ plugin ที่ไม่คุ้นเคย เพื่อหาต้นเหตุของปัญหาได้เร็วขึ้น">Read errors, logs and unfamiliar plugins to reach the root cause sooner.</p></li>
+          <li><span class="ai-num">04</span><h4 data-th="เอกสารและส่งมอบงาน">Docs &amp; handover</h4><p data-th="เขียน README บันทึกเซิร์ฟเวอร์ และคำอธิบายสำหรับลูกค้าที่ทีมนำไปใช้ต่อได้">Write READMEs, server notes and client-facing explanations the team can reuse.</p></li>
         </ol>
       </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section container">
-      <h3 class="section-title reveal">Selected Projects</h3>
+      <h3 class="section-title reveal" data-th="ผลงานเด่น">Selected Projects</h3>
       <div class="projects-grid">
 
         <article class="project card reveal">
           <div class="project-thumb" style="--c1:#166534;--c2:#4d7c0f"><span>🏢</span></div>
           <div class="project-body">
-            <span class="project-type">Internal web app</span>
-            <h4>Real-estate Sales Management System</h4>
-            <p>Sales contracts, monthly reports and sales figures per agent for a property developer.</p>
+            <span class="project-type" data-th="เว็บแอปภายในองค์กร">Internal web app</span>
+            <h4 data-th="ระบบบริหารงานขายอสังหาริมทรัพย์">Real-estate Sales Management System</h4>
+            <p data-th="จัดการสัญญาขาย รายงานรายเดือน และยอดขายรายเซลส์ ให้บริษัทอสังหาริมทรัพย์">Sales contracts, monthly reports and sales figures per agent for a property developer.</p>
             <ul class="tags small"><li>Laravel</li><li>React</li><li>MySQL</li></ul>
-            <div class="project-links"><span class="muted">Private project</span></div>
+            <div class="project-links"><span class="muted" data-th="โปรเจคภายใน (ไม่เปิดเผย)">Private project</span></div>
           </div>
         </article>
 
         <article class="project card reveal">
           <div class="project-thumb" style="--c1:#0f766e;--c2:#15803d"><span>🏨</span></div>
           <div class="project-body">
-            <span class="project-type">Mobile app + admin</span>
-            <h4>Hotel Guest App</h4>
-            <p>Booking, dining, events, car service and loyalty points, managed from a Laravel admin dashboard.</p>
+            <span class="project-type" data-th="แอปมือถือ + ระบบหลังบ้าน">Mobile app + admin</span>
+            <h4 data-th="แอปสำหรับแขกโรงแรม">Hotel Guest App</h4>
+            <p data-th="จองห้อง ร้านอาหาร อีเวนต์ บริการรถ และสะสมแต้ม จัดการผ่าน admin dashboard ที่ทำด้วย Laravel">Booking, dining, events, car service and loyalty points, managed from a Laravel admin dashboard.</p>
             <ul class="tags small"><li>React Native</li><li>Laravel</li></ul>
-            <div class="project-links"><span class="muted">Demo available on request</span></div>
+            <div class="project-links"><span class="muted" data-th="ขอดู demo ได้">Demo available on request</span></div>
           </div>
         </article>
 
@@ -277,7 +279,7 @@
           <div class="project-body">
             <span class="project-type">SaaS</span>
             <h4>HelloPDPA</h4>
-            <p>Cookie-consent SaaS for WordPress and any website.</p>
+            <p data-th="SaaS จัดการ cookie consent สำหรับ WordPress และเว็บไซต์ทุกแบบ">Cookie-consent SaaS for WordPress and any website.</p>
             <ul class="tags small"><li>Laravel</li><li>Vue</li></ul>
             <div class="project-links"><a href="https://hellopdpa.com" target="_blank" rel="noopener">hellopdpa.com ↗</a></div>
           </div>
@@ -286,46 +288,70 @@
         <article class="project card reveal">
           <div class="project-thumb" style="--c1:#14532d;--c2:#0d9488"><span>🏥</span></div>
           <div class="project-body">
-            <span class="project-type">Headless website</span>
-            <h4>Hospital Group Website</h4>
-            <p>Front end connected to a CMS via API, serving several hospitals from one site.</p>
+            <span class="project-type" data-th="เว็บไซต์แบบ Headless">Headless website</span>
+            <h4 data-th="เว็บไซต์เครือโรงพยาบาล">Hospital Group Website</h4>
+            <p data-th="front end เชื่อมกับ CMS ผ่าน API รวมหลายโรงพยาบาลไว้ในระบบเดียว">Front end connected to a CMS via API, serving several hospitals from one site.</p>
             <ul class="tags small"><li>Headless CMS</li><li>REST API</li></ul>
-            <div class="project-links"><span class="muted">Demo available on request</span></div>
+            <div class="project-links"><span class="muted" data-th="ขอดู demo ได้">Demo available on request</span></div>
           </div>
         </article>
 
       </div>
 
-      <h4 class="sub-title reveal">Live client websites</h4>
+      <h4 class="sub-title reveal" data-th="เว็บไซต์ลูกค้าที่ออนไลน์อยู่">Live client websites</h4>
       <ul class="sites reveal">
-        <li><a href="https://systronics.co.th" target="_blank" rel="noopener"><strong>Systronics</strong><span>Company profile · rebuilt after spam infection</span></a></li>
+        <li><a href="https://systronics.co.th" target="_blank" rel="noopener"><strong>Systronics</strong><span data-th="Company profile · ทำใหม่หลังโดนสแปม">Company profile · rebuilt after spam infection</span></a></li>
         <li><a href="https://acinfotec.com" target="_blank" rel="noopener"><strong>ACinfotec</strong><span>Company profile</span></a></li>
         <li><a href="https://pagroup.co.th" target="_blank" rel="noopener"><strong>PA Group</strong><span>Company profile</span></a></li>
         <li><a href="https://ionenergy.co.th" target="_blank" rel="noopener"><strong>Ion Energy</strong><span>Company profile</span></a></li>
-        <li><a href="https://lazadasolutions.com" target="_blank" rel="noopener"><strong>Lazada Solutions</strong><span>Company site · Alibaba Cloud server</span></a></li>
-        <li><a href="https://pupcities.com" target="_blank" rel="noopener"><strong>Pupcities</strong><span>WooCommerce store</span></a></li>
-        <li><a href="https://cutboyknife.com" target="_blank" rel="noopener"><strong>Cutboy Knife</strong><span>WooCommerce store</span></a></li>
-        <li><a href="https://peninsulatailors.com" target="_blank" rel="noopener"><strong>Peninsula Tailors</strong><span>Booking landing page · Elementor</span></a></li>
+        <li><a href="https://lazadasolutions.com" target="_blank" rel="noopener"><strong>Lazada Solutions</strong><span data-th="เว็บบริษัท · ดูแลเซิร์ฟเวอร์ Alibaba Cloud">Company site · Alibaba Cloud server</span></a></li>
+        <li><a href="https://pupcities.com" target="_blank" rel="noopener"><strong>Pupcities</strong><span data-th="ร้านค้าออนไลน์ WooCommerce">WooCommerce store</span></a></li>
+        <li><a href="https://cutboyknife.com" target="_blank" rel="noopener"><strong>Cutboy Knife</strong><span data-th="ร้านค้าออนไลน์ WooCommerce">WooCommerce store</span></a></li>
+        <li><a href="https://peninsulatailors.com" target="_blank" rel="noopener"><strong>Peninsula Tailors</strong><span data-th="Landing page สำหรับจอง · Elementor">Booking landing page · Elementor</span></a></li>
       </ul>
     </section>
 
     <!-- ===== EDUCATION ===== -->
     <section id="education" class="section container">
-      <h3 class="section-title reveal">Education</h3>
+      <h3 class="section-title reveal" data-th="การศึกษา">Education</h3>
       <div class="card edu reveal">
         <div>
-          <h4>Bachelor of Engineering, Electronics and Computer Systems Engineering</h4>
-          <p class="muted">Silpakorn University · Second Class Honors · GPA 3.57</p>
+          <h4 data-th="วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมอิเล็กทรอนิกส์และระบบคอมพิวเตอร์">Bachelor of Engineering, Electronics and Computer Systems Engineering</h4>
+          <p class="muted" data-th="มหาวิทยาลัยศิลปากร · เกียรตินิยมอันดับ 2 · GPA 3.57">Silpakorn University · Second Class Honors · GPA 3.57</p>
         </div>
         <span class="tl-date">2021 — 2024</span>
       </div>
     </section>
 
+    <!-- ===== LANGUAGES ===== -->
+    <section id="languages" class="section container">
+      <h3 class="section-title reveal" data-th="ภาษา">Languages</h3>
+      <div class="lang-grid">
+        <div class="lang card reveal">
+          <div class="lang-head"><span class="lang-flag">TH</span><h4 data-th="ภาษาไทย">Thai</h4><span class="lang-level" data-th="ภาษาแม่">Native</span></div>
+          <ul class="lang-skills">
+            <li><span data-th="การพูด">Speaking</span><b data-th="ภาษาแม่">Native</b></li>
+            <li><span data-th="การฟัง">Listening</span><b data-th="ภาษาแม่">Native</b></li>
+            <li><span data-th="การอ่านและเขียน">Reading &amp; writing</span><b data-th="ภาษาแม่">Native</b></li>
+          </ul>
+        </div>
+        <div class="lang card reveal">
+          <div class="lang-head"><span class="lang-flag">EN</span><h4 data-th="ภาษาอังกฤษ">English</h4><span class="lang-level" data-th="ใช้ทำงานได้">Professional working</span></div>
+          <ul class="lang-skills">
+            <li><span data-th="การพูด">Speaking</span><b data-th="คล่อง">Fluent</b></li>
+            <li><span data-th="การฟัง">Listening</span><b data-th="คล่อง">Fluent</b></li>
+            <li><span data-th="การอ่านและเขียน">Reading &amp; writing</span><b data-th="ดี">Good</b></li>
+          </ul>
+          <p class="lang-note" data-th="ทำงานร่วมกับเพื่อนร่วมทีมชาวต่างชาติทุกวัน คุย requirement และอธิบายปัญหาทางเทคนิคเป็นภาษาอังกฤษได้อย่างมั่นใจ">Work every day with international teammates — discuss requirements and explain technical issues in English with confidence.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section container contact">
-      <h3 class="section-title reveal">Let's work together</h3>
+      <h3 class="section-title reveal" data-th="มาร่วมงานกัน">Let's work together</h3>
       <img class="avatar reveal" src="assets/avatar.webp" width="120" height="120" alt="Thanaporn smiling">
-      <p class="reveal">Open to full-stack and tech-lead opportunities. The fastest way to reach me is email.</p>
+      <p class="reveal" data-th="เปิดรับโอกาสในตำแหน่ง Full-stack และ Tech Lead ติดต่อทางอีเมลได้เร็วที่สุดค่ะ">Open to full-stack and tech-lead opportunities. The fastest way to reach me is email.</p>
       <a href="mailto:thanapornwang0411@gmail.com" class="btn btn-primary btn-lg reveal">thanapornwang0411@gmail.com</a>
       <ul class="socials reveal">
         <li><a href="https://github.com/Thanaporn77" target="_blank" rel="noopener">GitHub</a></li>

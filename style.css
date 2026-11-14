@@ -55,6 +55,16 @@ ul, ol { margin: 0; padding: 0; }
 .nav-links { display: flex; gap: 22px; margin-left: auto; }
 .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 500; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); text-decoration: none; }
+.lang-toggle {
+  height: 36px; padding: 0 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg-soft); color: var(--text); cursor: pointer; font: 700 .8rem var(--font); letter-spacing: .04em;
+}
+.lang-toggle:hover, .theme-toggle:hover { border-color: var(--accent); }
+.on-th { display: none; }
+:root[data-lang="th"] .on-en { display: none; }
+:root[data-lang="th"] .on-th { display: inline; }
+:root[lang="th"] body { line-height: 1.75; }
+:root[lang="th"] .section-title, :root[lang="th"] .job-lead, :root[lang="th"] .project-type { letter-spacing: .02em; font-size: .92rem; }
 .theme-toggle {
   display: grid; place-items: center; width: 36px; height: 36px;
   border: 1px solid var(--border); border-radius: 10px;
@@ -294,6 +304,17 @@ main { counter-reset: sec; }
 .sites strong::after { content: " ↗"; color: var(--accent); font-weight: 400; }
 .sites span { font-size: .84rem; color: var(--muted); }
 
+/* Languages */
+.lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start; }
+.lang-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.lang-head h4 { margin: 0; }
+.lang-flag { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--accent); color: var(--bg); font: 800 .8rem var(--font); }
+.lang-level { margin-left: auto; font-size: .8rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.lang-skills { list-style: none; display: grid; gap: 8px; }
+.lang-skills li { display: flex; justify-content: space-between; padding: 8px 12px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); font-size: .92rem; }
+.lang-skills span { color: var(--muted); }
+.lang-note { margin: 14px 0 0; color: var(--muted); font-size: .92rem; }
+
 /* Education */
 .edu { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .edu h4 { margin-bottom: 4px; }
@@ -331,7 +352,7 @@ main { counter-reset: sec; }
 }
 @media (max-width: 760px) {
   .nav-links { display: none; }
-  .theme-toggle { margin-left: auto; }
+  .lang-toggle { margin-left: auto; }
   .hero { padding: 72px 0 56px; }
   .section { padding: 52px 0; }
   .about-grid { grid-template-columns: 1fr; gap: 24px; }
