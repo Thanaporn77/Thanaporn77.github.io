@@ -292,6 +292,8 @@ main { counter-reset: sec; }
 .mock-bar em { margin-left: 8px; font: .62rem ui-monospace, Menlo, Consolas, monospace; font-style: normal; color: #64748b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mock-body { display: grid; gap: 8px; padding: 18px 16px 30px; background: linear-gradient(#fff, #f6faf7); }
 .mock-emoji { font-size: 1.9rem; }
+.mock-body.has-logo { display: grid; place-items: center; height: 128px; padding: 16px 24px 28px; background: #fff; }
+.pthumb .plogo { position: static; inset: auto; width: auto; height: auto; max-width: 72%; max-height: 84px; object-fit: contain; }
 .mock-line { height: 7px; border-radius: 4px; background: #e2ebe5; }
 .mock-line.l1 { width: 70%; } .mock-line.l2 { width: 45%; }
 .pview { position: absolute; inset: 0; display: grid; place-items: center; background: rgb(10 25 18 / .55); color: #fff; font-weight: 700; font-size: .95rem;
