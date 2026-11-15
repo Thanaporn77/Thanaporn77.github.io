@@ -39,7 +39,7 @@ document.querySelectorAll('.pgrid').forEach((g) => {
 
 // ---- Rotating word in hero ----
 if (document.getElementById('rotator') && !reduce) {
-  const words = ['Laravel', 'React', 'Node.js', 'Next.js', 'React Native', 'WordPress'];
+  const words = ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'React', 'WordPress'];
   let i = 0;
   setInterval(() => {
     const rot = document.getElementById('rotator');
